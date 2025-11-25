@@ -509,21 +509,23 @@ git push -u origin feature/fix-formatting
 
 1. **Pourquoi protéger les branches ?**
    - Que se passerait-il sans protection ?
-
+On pousserait n'importe quoi dessus et compromettre les branches de prod.
 2. **Pourquoi Conventional Commits ?**
    - Avantages pour l'équipe
+   plus facile à lire pour tout le monde, plus de coordination plus simple
    - Avantages pour le versionnage automatique
-
+Don't know puisque tu nous as dit que ce serait plus loin dans le brief...
 3. **Différence entre develop et main ?**
    - Quand merger dans develop ?
+Dès qu'on le souhaite notre feature est stable et peut être intégrer
    - Quand merger dans main ?
-
+Quand ça doit entre en prod !
 ### ✅ Validation Phase 2
 
-- [ ] Branches `main` et `develop` créées
-- [ ] Protection de branches configurée sur GitHub
-- [ ] Au moins 1 PR créée avec Conventional Commit
-- [ ] Vous comprenez le workflow GitFlow
+- [v] Branches `main` et `develop` créées
+- [v] Protection de branches configurée sur GitHub
+- [v] Au moins 1 PR créée avec Conventional Commit
+- [v] Vous comprenez le workflow GitFlow
 
 ---
 
