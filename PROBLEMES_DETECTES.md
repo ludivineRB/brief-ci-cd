@@ -162,3 +162,7 @@ MYPY
  uv adbrief-ci-cd-semantic-release-mkdocs git:(feature_CI) ✗ uv run mypy app/
 Success: no issues found in 11 source files
 ```
+- [v] L'application fonctionne localement
+- [v] Vous avez testé tous les endpoints
+- [v] `PROBLEMES_DETECTES.md` contient au moins 20 problèmes identifiés
+- [v] Vous comprenez la structure du projet
