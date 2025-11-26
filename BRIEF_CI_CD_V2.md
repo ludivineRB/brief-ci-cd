@@ -823,12 +823,12 @@ strategy:
 
 ### ✅ Validation Phase 3
 
-- [ ] Workflow `.github/workflows/ci.yml` créé
-- [ ] Tous les jobs (lint, typecheck, security, tests) fonctionnent
-- [ ] La CI s'exécute automatiquement sur chaque push/PR
-- [ ] Au moins 50% des problèmes détectés sont corrigés
-- [ ] Les tests passent
-- [ ] Configuration ruff, mypy, pytest dans `pyproject.toml`
+- [x] Workflow `.github/workflows/ci.yml` créé
+- [x] Tous les jobs (lint, typecheck, security, tests) fonctionnent
+- [x] La CI s'exécute automatiquement sur chaque push/PR
+- [x] Au moins 50% des problèmes détectés sont corrigés
+- [x] Les tests passent
+- [x] Configuration ruff, mypy, pytest dans `pyproject.toml`
 
 ---
 
