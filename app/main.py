@@ -1,11 +1,11 @@
+import os
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from sqlmodel import SQLModel
+
 from app.database import engine
 from app.routes import items_router
-import os
-import sys
-
 
 DEBUG_MODE = True
 UNUSED_VAR = "cette variable n'est jamais utilisée"
@@ -40,4 +40,7 @@ def health():
 
 secret = os.getenv('secret')
 API_KEY = os.getenv('API_KEY')
-very_long_variable_name_that_exceeds_line_length = "Cette ligne est intentionnellement trop longue pour violer les règles de formatage standard"
+very_long_variable_name_that_exceeds_line_length = """Cette ligne
+                                                     est intentionnellement trop
+                                                     longue pour v les règles
+                                                     de formatage standard"""

@@ -525,7 +525,7 @@ Quand ça doit entre en prod !
 - [v] Branches `main` et `develop` créées
 - [v] Protection de branches configurée sur GitHub
 - [v] Au moins 1 PR créée avec Conventional Commit
-- [v] Vous comprenez le workflow GitFlow
+- [vv] Vous comprenez le workflow GitFlow
 
 ---
 
