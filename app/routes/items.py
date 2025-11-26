@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
 from app.database import get_db
+from app.models import Item
 from app.schemas.item import ItemCreate, ItemResponse, ItemUpdate
 from app.services.item_service import ItemService
-from app.models import Item
 
 router = APIRouter(prefix="/items", tags=["items"])
 
@@ -19,7 +19,7 @@ def get_items(skip: int = 0, limit: int = 100) -> list[Item]:
 
 
 @router.get("/{item_id}", response_model=ItemResponse)
-def get_item(item_id:int) -> Item:
+def get_item(item_id: int) -> Item:
     db: Session = Depends(get_db)
     item = ItemService.get_by_id(db, item_id)
     if not item:
