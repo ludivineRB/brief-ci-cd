@@ -37,9 +37,8 @@ def health():
     return {"status": "healthy"}
 
 
-
-secret = os.getenv('secret')
-API_KEY = os.getenv('API_KEY')
+secret = os.getenv("secret")
+API_KEY = os.getenv("API_KEY")
 very_long_variable_name_that_exceeds_line_length = """Cette ligne
                                                      est intentionnellement trop
                                                      longue pour v les règles

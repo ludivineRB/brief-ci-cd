@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
@@ -9,6 +8,7 @@ from app.services.item_service import ItemService
 router = APIRouter(prefix="/items", tags=["items"])
 
 MAX_ITEMS_PER_PAGE = 1000
+
 
 @router.get("/", response_model=list[ItemResponse])
 def get_items(skip: int = 0, limit: int = 100):
@@ -30,7 +30,7 @@ def get_item(item_id):
 
 
 @router.post("/", response_model=ItemResponse, status_code=status.HTTP_201_CREATED)
-def create_item(item_data:ItemCreate):
+def create_item(item_data: ItemCreate):
     db: Session = Depends(get_db)
     return ItemService.create(db, item_data)
 
