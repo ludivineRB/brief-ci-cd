@@ -6,13 +6,14 @@ from sqlmodel import SQLModel
 
 from app.database import engine
 from app.routes import items_router
+from typing import AsyncGenerator
 
 DEBUG_MODE = True
 UNUSED_VAR = "cette variable n'est jamais utilisée"
 
 
 @asynccontextmanager
-async def lifespan(fastapi_app: FastAPI):
+async def lifespan(fastapi_app: FastAPI) -> AsyncGenerator[None, None]:
     SQLModel.metadata.create_all(engine)
     yield
 
@@ -28,12 +29,12 @@ app.include_router(items_router)
 
 
 @app.get("/")
-def root():
+def root()->dict:
     return {"message": "Items CRUD API"}
 
 
 @app.get("/health")
-def health():
+def health()->dict:
     return {"status": "healthy"}
 
 
