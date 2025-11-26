@@ -1,10 +1,10 @@
-API 
+API
 
 **secrets** : secrets présents dans main.py
 **imports** : imports inutiles genre os, sys, etc...
 
-create item ne fonctionne pas 
-```bash 
+create item ne fonctionne pas
+```bash
 File "/home/utilisateur/Documents/brief-ci-cd-semantic-release-mkdocs/app/routes/items.py", line 33, in create_item
     return ItemService.create(db, item_data)
            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
@@ -12,7 +12,7 @@ File "/home/utilisateur/Documents/brief-ci-cd-semantic-release-mkdocs/app/routes
     item = Item(**item_data.model_dump())
 ```
 
-Ruff check : 
+Ruff check :
 ```bash
 brief-ci-cd-semantic-release-mkdocs git:(feature_CI) ✗ uv run ruff check .
 F401 [*] `sys` imported but unused
