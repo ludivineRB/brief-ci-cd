@@ -1131,6 +1131,7 @@ docker build -t items-api:local .
 # Run
 docker run -p 8000:8000 items-api:local
 
+
 # Test
 curl http://localhost:8000/health
 ```
