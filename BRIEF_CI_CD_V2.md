@@ -509,21 +509,23 @@ git push -u origin feature/fix-formatting
 
 1. **Pourquoi protéger les branches ?**
    - Que se passerait-il sans protection ?
-
+On pousserait n'importe quoi dessus et compromettre les branches de prod.
 2. **Pourquoi Conventional Commits ?**
    - Avantages pour l'équipe
+   plus facile à lire pour tout le monde, plus de coordination plus simple
    - Avantages pour le versionnage automatique
-
+Don't know puisque tu nous as dit que ce serait plus loin dans le brief...
 3. **Différence entre develop et main ?**
    - Quand merger dans develop ?
+Dès qu'on le souhaite notre feature est stable et peut être intégrer
    - Quand merger dans main ?
-
+Quand ça doit entre en prod !
 ### ✅ Validation Phase 2
 
-- [ ] Branches `main` et `develop` créées
-- [ ] Protection de branches configurée sur GitHub
-- [ ] Au moins 1 PR créée avec Conventional Commit
-- [ ] Vous comprenez le workflow GitFlow
+- [v] Branches `main` et `develop` créées
+- [v] Protection de branches configurée sur GitHub
+- [v] Au moins 1 PR créée avec Conventional Commit
+- [vv] Vous comprenez le workflow GitFlow
 
 ---
 
@@ -821,12 +823,12 @@ strategy:
 
 ### ✅ Validation Phase 3
 
-- [ ] Workflow `.github/workflows/ci.yml` créé
-- [ ] Tous les jobs (lint, typecheck, security, tests) fonctionnent
-- [ ] La CI s'exécute automatiquement sur chaque push/PR
-- [ ] Au moins 50% des problèmes détectés sont corrigés
-- [ ] Les tests passent
-- [ ] Configuration ruff, mypy, pytest dans `pyproject.toml`
+- [x] Workflow `.github/workflows/ci.yml` créé
+- [x] Tous les jobs (lint, typecheck, security, tests) fonctionnent
+- [x] La CI s'exécute automatiquement sur chaque push/PR
+- [x] Au moins 50% des problèmes détectés sont corrigés
+- [x] Les tests passent
+- [x] Configuration ruff, mypy, pytest dans `pyproject.toml`
 
 ---
 
@@ -1129,6 +1131,7 @@ docker build -t items-api:local .
 # Run
 docker run -p 8000:8000 items-api:local
 
+
 # Test
 curl http://localhost:8000/health
 ```
@@ -1162,17 +1165,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
-        uses: 
+        uses:
 
       - name: Log in to GitHub Container Registry
-        uses: 
+        uses:
 
       - name: Extract metadata
         id: meta
-        uses: 
+        uses:
 
       - name: Build and push Docker image
-        uses: 
+        uses:
 
 ```
 
@@ -1218,11 +1221,11 @@ docker run -p 8000:8000 ghcr.io/<votre-username>/items-ci-cd:main
 
 ### ✅ Validation Phase 5
 
-- [ ] `Dockerfile` optimisé créé
-- [ ] Image build et run localement
-- [ ] Workflow `.github/workflows/build.yml` créé
-- [ ] Image pushée sur GHCR
-- [ ] Image pullable et fonctionnelle depuis GHCR
+- [x] `Dockerfile` optimisé créé
+- [x] Image build et run localement
+- [x] Workflow `.github/workflows/build.yml` créé
+- [x] Image pushée sur GHCR
+- [x] Image pullable et fonctionnelle depuis GHCR
 
 ---
 
@@ -1333,20 +1336,20 @@ jobs:
 
 
       - name: Set up uv
-        uses: 
+        uses:
 
       - name: Install dependencies
-        run: 
+        run:
 
       - name: Python Semantic Release
         id: release
-        uses: 
+        uses:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GHCR (if new release)
         if:steps.release.outputs.released == 'true'
-        run: 
+        run:
 ```
 
 **Ce workflow** :
@@ -1760,14 +1763,14 @@ jobs:
 
       - name: Get release version
         id: version
-        run: 
+        run:
 
       - name: Deploy to Azure Container Apps
-        run: 
+        run:
 
 
       - name: Health Check
-        run: 
+        run:
 
       - name: Rollback on failure
         if: failure()

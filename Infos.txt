@@ -1,0 +1,7 @@
+Le pré-commit :
+Permet de vérfifier toutes les infos avant de faire les pull-requests, donc gain de temps.
+Si il voit des erreurs , ils les reparent et il faut refaire le add et le commit et bam ca passe.
+Si il peut pas réparer lui même il va indiquer les erreurs.
+
+
+App ID: 2367423
