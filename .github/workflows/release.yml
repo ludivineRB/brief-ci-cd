@@ -30,6 +30,8 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
@@ -47,6 +49,9 @@ jobs:
           # python-semantic-release : Outil pour versionning sémantique automatique
           uv tool install python-semantic-release
 
+      - name: Configure Git to use App Token
+        run: |
+            git remote set-url origin https://x-access-token:${{ steps.get_token.outputs.token }}@github.com/${{ github.repository }}.git
       # Étape 5: Génère une nouvelle version et publie la release
       - name: Semantic Versioning
         id: semantic
